@@ -57,7 +57,7 @@ export default function Checkout(props) {
   return (
     <>
       <div className='checkout-container'>
-        <h1>Total: $ { total }</h1>
+        <h1>Total: $ { total.toFixed(2) }</h1>
         <h3 style={{color: 'red'}}>Tax: {tax * 100}%</h3>
         <h3>Tip:
           <select style={{width: '150px', marginLeft: '10px'}} onChange={handleTip}>
