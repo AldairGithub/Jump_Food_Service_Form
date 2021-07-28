@@ -3,6 +3,8 @@ import React, {useState} from 'react'
 export default function Item(props) {
   const { updateAmount, item, itemId } = props
 
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
   const [currentItem, setCurrentItem] = useState({
     name: item.name,
     price: item.price,
@@ -24,14 +26,11 @@ export default function Item(props) {
       <div>
         <h3>{currentItem.name}</h3>
         <p>{currentItem.price}</p>
-        <input
-          type='number'
-          name='amount'
-          min='0'
-          max='999'
-          value={currentItem.amount}
-          onChange={handleChange}
-        />
+        <select onChange={handleChange}>
+          {numbers.map(num => (
+            <option name='amount' value={ num }>{ num }</option>
+          ))}
+        </select>
       </div>
     </>
   )
