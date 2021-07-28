@@ -1,4 +1,5 @@
-import React,{useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
+import './Checkout.css'
 
 export default function Checkout(props) {
   const { total } = props
@@ -55,11 +56,11 @@ export default function Checkout(props) {
   
   return (
     <>
-      <div>
-        <h1>Total: { total }</h1>
-        <h3>Tax: {tax * 100}%</h3>
+      <div className='checkout-container'>
+        <h1>Total: $ { total }</h1>
+        <h3 style={{color: 'red'}}>Tax: {tax * 100}%</h3>
         <h3>Tip:
-          <select onChange={handleTip}>
+          <select style={{width: '150px', marginLeft: '10px'}} onChange={handleTip}>
             <option selected disabled>Select tip</option>
             <option value={0 / 100}>No tip</option>
             <option value={10 / 100}>10%</option>
@@ -71,6 +72,7 @@ export default function Checkout(props) {
             <>
               <h3>Custom amount:
                 <input
+                  style={{marginLeft: '10px', height: '20px'}}
                   placeholder="Add your tip here"
                   type="number"
                   name="number"
@@ -84,7 +86,7 @@ export default function Checkout(props) {
           }
 
         </h3>
-        <h1>Checkout: {final.toFixed(2)}</h1>
+        <h1 style={{color: 'green'}}>Checkout: $ {final.toFixed(2)}</h1>
       </div>
     </>
   )

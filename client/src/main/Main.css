@@ -1,0 +1,11 @@
+.main-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+h1 {
+  font-weight: 400;
+}
+h3 {
+  font-weight: 300;
+  text-transform: capitalize;
+}
