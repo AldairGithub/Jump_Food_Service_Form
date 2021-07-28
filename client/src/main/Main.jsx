@@ -36,7 +36,7 @@ export default function Main() {
         setTotal={setTotal}
         updateAmount={updateAmount}
       />
-      <Checkout total={ total.toFixed(2) }/>
+      <Checkout total={ total }/>
 
     </>
   )
