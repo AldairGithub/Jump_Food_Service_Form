@@ -1,0 +1,6 @@
+.items-container {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 9px;
+  margin: 0 auto;
+}

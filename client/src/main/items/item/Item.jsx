@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import './Item.css'
 
 export default function Item(props) {
   const { updateAmount, item, itemId } = props
@@ -8,7 +9,8 @@ export default function Item(props) {
   const [currentItem, setCurrentItem] = useState({
     name: item.name,
     price: item.price,
-    amount: item.amount
+    amount: item.amount,
+    img: item.img
   })
 
   const handleChange = (e) => {
@@ -23,10 +25,13 @@ export default function Item(props) {
 
   return (
     <>
-      <div>
+      <div className="item-container">
+        <div className='img-container'>
+          <img alt={currentItem.name} className='img' src={currentItem.img}/>
+        </div>
         <h3>{currentItem.name}</h3>
-        <p>{currentItem.price}</p>
-        <select onChange={handleChange}>
+        <p>$ {currentItem.price}</p>
+        <select className='select' onChange={handleChange}>
           {numbers.map(num => (
             <option name='amount' value={ num }>{ num }</option>
           ))}
